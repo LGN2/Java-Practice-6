@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -68,6 +69,36 @@ public class UniversityCourseRegistrationSystem {
                 "Total Course Registrations: "
                         + totalEnrollments
         );
+    }
+    public static void registerCourse(
+            Map<String, Set<String>> registrations,
+            String student,
+            String course) {
+
+        registrations.putIfAbsent(
+                student,
+                new HashSet<>()
+        );
+
+        Set<String> studentCourses =
+                registrations.get(student);
+
+        if (studentCourses.add(course)) {
+
+            IO.println(
+                    student
+                            + " registered for "
+                            + course
+            );
+
+        } else {
+
+            IO.println(
+                    student
+                            + " is already registered for "
+                            + course
+            );
+        }
     }
 }
 
