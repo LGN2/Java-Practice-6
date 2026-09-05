@@ -65,4 +65,15 @@ public class OnlineCourseEnrollmentSystem {
                         + course
         );
     }
+    public static void displayEnrollments(
+            Map<String, String> enrollments) {
+        for (Map.Entry<String, String> entry
+                : enrollments.entrySet()) {
+            IO.println(
+                    entry.getKey()
+                            + " -> "
+                            + entry.getValue()
+            );
+        }
+    }
 }
