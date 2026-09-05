@@ -29,4 +29,27 @@ public class LibraryBookTracker {
 
         IO.println("\nTotal Books: " + books.size());
     }
+    public static void addBook(
+            Set<Integer> bookIds,
+            Map<Integer, String> books,
+            int id,
+            String title) {
+
+        if (bookIds.add(id)) {
+
+            books.put(id, title);
+
+            IO.println(
+                    title + " added successfully."
+            );
+
+        } else {
+
+           IO.println(
+                    "Book ID "
+                            + id
+                            + " already exists."
+            );
+        }
+    }
 }
