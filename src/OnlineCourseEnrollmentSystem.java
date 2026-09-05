@@ -52,4 +52,17 @@ public class OnlineCourseEnrollmentSystem {
         );
         displayEnrollments(enrollments);
     }
+    public static void enrollStudent(
+            Set<String> students,
+            Map<String, String> enrollments,
+            String student,
+            String course) {
+        students.add(student);
+        enrollments.put(student, course);
+        IO.println(
+                student
+                        + " enrolled in "
+                        + course
+        );
+    }
 }
